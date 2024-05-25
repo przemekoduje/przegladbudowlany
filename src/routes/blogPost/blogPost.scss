@@ -1,0 +1,103 @@
+.blogpost{
+
+    width: 100vw;
+
+    .post{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .post-top{
+            position: relative;
+            width: 100%;
+            height: 55vh;
+            
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+            }
+
+            i{
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                color: white;
+                font-size: 22px;
+                background-color: rgba(0, 0, 0, 0.376);
+                padding: 5px;
+            }
+
+            .opis{
+                position: absolute;
+                bottom: 50px;
+                left: 50px;
+                z-index: 2;
+                color: white;
+                font-family: "Poppins", sans-serif;
+                
+                .top{
+                    display: flex;
+                    align-items: center;
+                    gap: 50px;
+
+                    .category{
+                        color: red;
+                        background-color: rgba(95, 95, 95, 0.821);
+                        padding: 5px 10px;
+                        border-radius: 25px;
+                    }
+                }
+                .bottom{
+                    font-size: 32px;
+                }
+            }
+            
+        }
+        
+        
+        .post-bottom{
+
+            padding: 25px 35px;
+            font-family: "Poppins", sans-serif;
+            
+            .social{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+
+                .author{
+
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    background-color: black;
+                    padding: 5px 20px;
+                    border-radius: 20px;
+
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                    .name{
+                        color: white;
+                    }
+                }
+
+                .like, .comment{
+                    background-color: rgb(240, 240, 240);
+                    padding: 5px 20px;
+                    border-radius: 20px;
+                    
+                }
+            }
+            .text{
+                margin-top: 25px;
+            }
+        }
+    }
+}
