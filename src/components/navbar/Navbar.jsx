@@ -1,6 +1,7 @@
-import './navbar.scss'
-import React, { useState } from 'react';
+import "./navbar.scss";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 
 export default function Navbar() {
@@ -12,29 +13,57 @@ export default function Navbar() {
 
   return (
     <nav>
-      <div className='navbar'>
+      <div className="navbar">
         <div className="navbar-text">
-          <a href="/">USŁUGI</a>
-          <a href="/">O MNIE</a>
-          <a href="/">BLOG</a>
-          <a href="/">PRZEPISY</a>
+          
+          <HashLink smooth to="/#services">
+            <a href="/">USŁUGI</a>
+          </HashLink>
+          
+          <HashLink smooth to="/#about">
+            <a href="/">O MNIE</a>
+          </HashLink>
+          
+          {/* <Link to={`/blog`} className="temp">
+            
+              BLOG
+            
+          </Link> */}
+
+          <Link to={`/console`} className="temp">
+            
+              Console
+            
+          </Link>
+          
+            
+          
         </div>
         <div className="menu-btn" onClick={toggleMenu}>
           <i className="fa-solid fa-bars"></i>
         </div>
       </div>
-        <div className={`full-screen-menu ${isMenuOpen ? 'open' : ''}`}>
-          <div className="menu-content">
-            <Link to={`/`}>
-              <a href="/" onClick={toggleMenu}>USŁUGI</a>
-            </Link>
-            <Link to={`/`}>
-              <a href="#about" onClick={toggleMenu}>O MNIE</a>
-            </Link>
-              
-          </div>
+      <div className={`full-screen-menu ${isMenuOpen ? "open" : ""}`}>
+        <div className="menu-content">
+          
+          <HashLink smooth to="/#services">
+            <a href="/" onClick={toggleMenu}>USŁUGI</a>
+          </HashLink>
+          <HashLink smooth to="/#about" >
+            <a href="#about" onClick={toggleMenu}>
+              O MNIE
+            </a>
+          </HashLink>
+          
+          
+          
+          <Link to={`#`} onClick={toggleMenu} className="temp">
+            
+              BLOG
+            
+          </Link>
         </div>
+      </div>
     </nav>
-    
-  )
+  );
 }

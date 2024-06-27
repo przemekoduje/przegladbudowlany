@@ -1,6 +1,6 @@
 .blogpost{
 
-    width: 100vw;
+    width: 100%;
 
     .post{
         display: flex;
@@ -85,6 +85,15 @@
                     }
                     .name{
                         color: white;
+                    }
+                    
+                }
+                button{
+                    background-color: transparent;
+                    border: 1px solid black;
+
+                    i{
+                        color: black;
                     }
                 }
 

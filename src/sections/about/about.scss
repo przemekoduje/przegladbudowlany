@@ -1,5 +1,200 @@
-.about{
+@import "../../responsive.scss";
+
+.section2{
     height: 100%;
     width: 100%;
-    background-color: green;
+    position: relative;
+
+    .ramka{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;        
+        border-top-right-radius: 40px;
+        border-top-left-radius: 40px;
+        /* padding: 8px; */
+        display: flex;
+        justify-content: center;
+        
+        
+        .profil{
+            width: 100%;
+            height: 80%;
+            border-top-right-radius: 40px;
+            border-top-left-radius: 40px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+
+            @include md {
+                width: 50%;
+                height: 100%;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+                position: absolute;
+                right: 0;
+            }
+            
+          
+         
+            
+            &.expanded-img{
+                height: 70%;
+            }
+            
+            
+              
+                       
+        }
+
+        .text-area{
+            position: absolute;
+            overflow-y: scroll; 
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background: rgb(235, 235, 235);
+            border-top-right-radius: 40px;
+            border-top-left-radius: 40px;
+            padding: 10px 30px;
+            font-family: "Roboto", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            transition: height 1s ease;
+            z-index: 1000;
+            
+            @include md {
+                width: 50%;
+                height: 100%;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+                align-items: start;
+                left: 0;
+                padding-top: 100px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 0;
+                
+            }
+
+            &.expanded{
+                height: 100%; /* Dodaj 100px do max-height */
+                
+            }
+            h1{
+                font-size: 40px;
+                font-weight: 200;
+                
+                margin: 70px 0 0;
+                text-align: right;
+
+                @include md {
+                    font-size: 50px;
+                    align-self: end;
+                }
+            }
+            .tel{
+                display: flex;
+                align-items: center;
+                z-index: 998;
+                
+                @include md {
+                    margin-top: 30px;
+                }
+
+                i {
+                    font-size: 25px;
+                    margin-right: 10px;
+                }
+
+                h3{
+                    font-size: 25px;
+                    font-weight: 200;
+                }
+            }
+            
+            span{
+                font-size: 18px;
+                font-weight: 200;
+                margin-top: 20px;
+                
+            }
+            .upr{
+                position: relative;
+                margin-top: 50px;
+                width: 100%;
+                height: 120px;
+
+                .upr-buttons {
+                    
+                    
+                    
+                    
+
+                    
+
+                    a{
+                        margin-right: 30px;
+
+                        .img-upr{
+                            width: 80px;
+                            height:  120px;
+                            
+                        }
+
+                        &:hover{
+                            scale: 1.1;
+                            transition: scale 0.5s ease;
+                        }
+                    }
+                }
+            }
+            
+            
+            
+            
+
+            .chevron{
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                cursor: pointer;
+
+                @include md {
+                    display: none;
+                }
+             
+            
+                
+                animation: arrowUpAndDown 1s infinite alternate;
+                z-index: 1006;
+
+                i {
+                    font-size: 30px;
+                    transition: transform 1s ease;
+                    z-index: 1006;
+                }
+            
+                @keyframes arrowUpAndDown {
+                    from {
+                        transform: translateY(0); /* Początkowa pozycja */
+                    }
+                    to {
+                        transform: translateY(-5px); /* Przesunięcie w górę o 3 piksele */
+                    }
+    
+                }
+            }
+        
+            
+            
+        
+        }
+    
+        
+    }
+    
+    
 }

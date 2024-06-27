@@ -1,0 +1,15 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+
+    input{
+        border: none;
+        border-bottom: 0.5px solid black;
+        margin-bottom: 5px;
+    }
+    button{
+        background-color: transparent;
+        border: 0.5px solid black;
+        cursor: pointer;
+    }
+}

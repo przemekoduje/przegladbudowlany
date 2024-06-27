@@ -1,8 +1,9 @@
 import "./slider.scss";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { posts } from "../postsData";
 import { Link } from "react-router-dom";
+import { db } from "../../config/firebaseConfig";
+import { getDocs, collection } from 'firebase/firestore';
 
 
 function Slider() {
@@ -10,12 +11,26 @@ function Slider() {
   const carouselRef = useRef();
   const innerCarouselRef = useRef();
 
-  useEffect(() => {
-    const carouselWidth = carouselRef.current.offsetWidth;
-    const innerCarouselWidth = innerCarouselRef.current.scrollWidth;
-    setWidth(innerCarouselWidth - carouselWidth + 40); // 20px margin
-  }, []);
+  
 
+  const[postsList, setPostList] = useState([]);
+
+    const postsCollectionRef = collection (db, "posts");
+    
+    useEffect (() => {
+      const getPosts = async () => {
+        const data = await  getDocs (postsCollectionRef)
+
+        setPostList(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
+      }
+      getPosts();
+    }, [postsCollectionRef])
+
+    useEffect(() => {
+      const carouselWidth = carouselRef.current.offsetWidth;
+      const innerCarouselWidth = innerCarouselRef.current.scrollWidth;
+      setWidth(innerCarouselWidth - carouselWidth + 40); // 20px margin
+    }, [postsList]);
 
   return (
     <div className="slider">
@@ -25,10 +40,10 @@ function Slider() {
           drag="x" 
           dragConstraints={{right: 0, left: -width}}
           className="inner-carousel">
-          {posts.map(post => {
+          {postsList.map(post => {
             return(
               <motion.div className="item" key={post.id}>
-                <img src={post.img}  alt={post.title} />
+                <img src={post.imgMain}  alt=""/>
                 
               <Link to={`/blog/${post.id}`} className="imageContainer">
                 <div className="overlay">

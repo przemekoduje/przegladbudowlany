@@ -1,5 +1,224 @@
-.services{
+.section1{
+    position: relative;
     height: 100%;
     width: 100%;
-    background-color: red;
+    background-image: url('../../assets/images/back01.png');
+
+    .maincontainer{
+        position: absolute;
+        width: 350px;
+        height: 550px;
+        background: none;
+        top: 50%;
+        left:50%;
+        border: 0.2px solid black;
+        border-radius: 25px;
+        transform: translate(-50%, -50%);
+
+        .thecard{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.8s ease;
+            
+
+            &.rotate {
+                transform: rotateY(180deg);
+            }
+
+            .thefront{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
+                backface-visibility: hidden;
+                overflow: hidden;
+                color: #000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+                background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.847));
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(0px);
+
+                h1{
+                    font-family: "Roboto", sans-serif;
+                    font-size: 45px;
+                    text-align: center;
+                    color: black;
+                    font-weight: 200;
+                }
+                .btn-front{
+                    margin-top: 50px;
+                    padding: 35px 70px;
+                    border: none;
+                    border-radius: 50px;
+                    background-color: black;
+                    color: white;
+                    font-family: "Roboto", sans-serif;
+                    font-size: 20px;
+                    font-weight: 200;
+                    cursor: pointer;
+                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+                }
+                .desc{
+                    font-family: "Roboto", sans-serif;
+                    font-size: 12px;
+                    text-align: center;
+                    color: black;
+                    font-weight: 200;
+                    margin-top: 35px;
+                }
+            }
+
+            .theback{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
+                backface-visibility: hidden;
+                overflow: hidden;
+                
+                color: #333;
+                text-align: center;
+                transform: rotateY(180deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+                background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3));
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(20px);
+
+                .orderForm{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 30px 30px;
+                
+                }
+                .field {
+                    padding: 10px 10px;
+                    border: none;
+                    margin-bottom: 5px;
+                    border-bottom: 0.2px solid black;
+                }
+                
+                .service-checkbox{
+                    padding: 0 0px;
+                    border-radius: 5px;
+                    
+                }
+                
+                .option{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-bottom: 10px;
+                    
+                }
+                .option input{
+                    margin-right: 5px;
+                }
+                .service-label{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 15px;
+                    align-items: self-start;
+                    font-family: "Roboto", sans-serif;
+                }
+                .service-text{
+                    margin-bottom: 15px;
+                }
+                .service{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                }
+                .btn-back{
+                    margin-top: 20px;
+                    padding: 35px 80px;
+                    border: none;
+                    border-radius: 50px;
+                    background-color: black;
+                    color: white;
+                    font-family: "Roboto", sans-serif;
+                    font-size: 20px;
+                    font-weight: 200;
+                    cursor: pointer;
+                    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+                }
+                .orderForm input[type="text"]::placeholder,
+                .orderForm input[type="email"]::placeholder,
+                .orderForm input[type="tel"]::placeholder {
+                    color: #9f9d9d; /* Wybierz kolor placeholdera, który chcesz użyć */
+                }
+                
+                /* Ukrywanie oryginalnego checkboxa */
+                .orderForm input[type="checkbox"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    min-width: 20px;
+                    height: 20px;
+                    border: 2px solid #313131; /* Dodajemy obramowanie */
+                    border-radius: 3px; /* Zaokrąglenie krawędzi */
+                    outline: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                /* Stylowanie checkboxa po zaznaczeniu */
+                .orderForm input[type="checkbox"]:checked {
+                    background-color: transparent; /* Kolor tła po zaznaczeniu */
+                }
+                
+                /* Dodanie tła wewnętrznego do zaznaczonego checkboxa */
+                .orderForm input[type="checkbox"]:checked::before {
+                    content: '';
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    
+                    background-color: black; /* Kolor tła wewnętrznego */
+                    border-radius: 2px; /* Zaokrąglenie krawędzi */
+                }
+                figcaption{
+                    font-family: "Roboto", sans-serif;
+                    font-size: 10px;
+                    margin-top: 20px;
+                }
+                .hidden-conf{
+                    display: none
+                }
+                .hidden{
+                    display: none
+                }
+                .d-none {
+                    display: none;
+                }
+                .confirmation p{
+                    font-family: "Roboto", sans-serif;
+                    font-size: 15px;
+                    padding: 0 40px;
+                }
+                .conf{
+                    font-family: "Roboto", sans-serif;
+                    font-size: 15px;
+                    padding: 0 40px;
+                }
+            }
+        }
+    }
 }

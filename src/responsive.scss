@@ -1,15 +1,42 @@
+// @mixin sm{
+//     @media(max-width: 738px){
+//         @content;
+//     }
+// }
+
+
+
+// @mixin md{
+//     @media(max-width: 1024px){
+//         @content;
+//     }
+// }
+// @mixin lg{
+//     @media(max-width: 1366px){
+//         @content;
+//     }
+// }
+// @mixin xlg{
+//     @media(max-width: 2900px){
+//         @content;
+//     }
+// }
 @mixin sm{
-    @media(max-width: 738px){
-        @content;
+        @media(max-width: 738px){
+            @content;
+        }
     }
-}
+
 @mixin md{
-    @media(max-width: 1024px){
+    @media(min-width: 739px){
         @content;
     }
 }
+
+
+
 @mixin lg{
-    @media(max-width: 1366px){
+    @media(min-width: 1024px){
         @content;
     }
 }
